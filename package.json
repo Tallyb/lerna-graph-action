@@ -6,11 +6,13 @@
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
+    "build:w": "tsc --watch",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
     "package": "ncc build --source-map",
     "test": "jest",
+    "test:w": "jest --watch",
     "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
   },
   "repository": {
@@ -25,21 +27,27 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.4"
+    "@actions/core": "^1.2.4",
+    "@lerna/package-graph": "^3.18.5",
+    "@lerna/project": "^3.21.0",
+    "axios": "^0.20.0",
+    "qs": "^6.9.4"
   },
   "devDependencies": {
     "@types/jest": "^26.0.10",
     "@types/node": "^14.6.0",
-    "@typescript-eslint/parser": "^3.9.1",
+    "@types/qs": "^6.9.4",
+    "@typescript-eslint/parser": "^3.10.0",
     "@vercel/ncc": "^0.23.0",
-    "eslint": "^7.5.0",
+    "eslint": "^7.7.0",
     "eslint-plugin-github": "^4.1.1",
     "eslint-plugin-jest": "^23.20.0",
-    "jest": "^24.9.0",
-    "jest-circus": "^26.4.1",
+    "jest": "^26.4.2",
+    "jest-circus": "^26.4.2",
     "js-yaml": "^3.14.0",
-    "prettier": "2.0.5",
-    "ts-jest": "^24.3.0",
-    "typescript": "^3.9.7"
+    "prettier": "^2.1.0",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
   }
 }

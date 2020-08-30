@@ -1,11 +1,16 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Lerna Graph'
+description: 'Generate a graph of the lerna packages and version'
+author: 'Tally Barak'
 inputs:
-  milliseconds: # change this
+  rootPath: 
+    required: false
+    description: 'Lerna rootPath'
+    default: process.cwd()
+  imagePath: 
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'Path for the image generated'
+    default: 'lerna.png'
+
 runs:
   using: 'node12'
   main: 'dist/index.js'

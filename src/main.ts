@@ -1,19 +1,19 @@
-import * as core from '@actions/core'
-import {wait} from './wait'
+import {buildGraph} from './graph';
+import {generateImage} from './image';
+import Path from 'path';
+import * as core from '@actions/core';
 
-async function run(): Promise<void> {
+export async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`) // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
-
-    core.setOutput('time', new Date().toTimeString())
+    const cwd: string =
+      core.getInput('rootPath') || process.env.LERNA_ROOT || process.cwd();
+    core.debug(`Creating a graph on ${cwd}`);
+    const imagePath = Path.resolve(process.cwd(), core.getInput('imagePath'));
+    const graph = await buildGraph(cwd);
+    await generateImage(graph, imagePath);
+    core.debug(`Creating image ${cwd}`);
   } catch (error) {
-    core.setFailed(error.message)
+    core.setFailed(error.message);
   }
 }
-
-run()
+run();
