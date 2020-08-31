@@ -23,7 +23,7 @@ jobs:
         with:
           rootPath: '__fixtures__/normal'
           imagePath: 'temp/graph.png'
-          - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2
           with:
             name: graph
             path: temp/graph.png
