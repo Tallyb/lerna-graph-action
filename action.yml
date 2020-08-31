@@ -1,7 +1,7 @@
 name: 'Lerna Graph'
 description: 'Generate a graph of the lerna packages and version'
 icon: book
-color: grey
+color: purple
 author: 'Tally Barak'
 inputs:
   rootPath: 
