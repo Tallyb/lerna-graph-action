@@ -6,7 +6,6 @@ export async function generateImage(
   imagePath: string,
 ): Promise<void> {
   const writer = Fs.createWriteStream(imagePath);
-
   const data = qs.stringify({
     chl: graph,
     cht: 'gv',
