@@ -29,3 +29,9 @@ steps:
     name: lerna graph
     path: graph/image.png
 ```
+
+## FAQ
+
+### Do I need to use Lerna for this action? 
+
+This action can work with any repository that is compliant with Lerna structure (i.e. multiple package.json files). You do not have to use Lerna to install or publish the packages. The only requirement is have a `lerna.json` file that marks your packages folders. 
