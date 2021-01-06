@@ -30,7 +30,7 @@
     "@actions/core": "^1.2.6",
     "@lerna/package-graph": "^3.18.5",
     "@lerna/project": "^3.21.0",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "qs": "^6.9.4"
   },
   "devDependencies": {
